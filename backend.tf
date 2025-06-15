@@ -2,7 +2,7 @@ terraform {
   backend "s3" {
     bucket = "test-bucket"
     region = "us-east-1"
-    key = "github/test.tfstate"
+    key = "github/terraform.tfstate"
     encrypt = true
   }
   required_version = ">=0.13.0"
