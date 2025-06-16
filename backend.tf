@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "test-bucket"
+    bucket = "thierry-terraform-bucket"
     region = "us-east-1"
     key = "github/terraform.tfstate"
     encrypt = true
