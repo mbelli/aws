@@ -10,4 +10,4 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
       - name: build image
-        run: docker build -t image_latest
+        run: docker build -t image:latest .
