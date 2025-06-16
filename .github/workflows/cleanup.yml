@@ -2,8 +2,8 @@ name: Terraform Cleanup
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 0 * * *' # Runs every day at midnight, adjust as needed
+  #schedule:
+  #  - cron: '0 0 * * *' # Runs every day at midnight, adjust as needed
 
 jobs:
   terraform-cleanup:
@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      AWS_REGION: 'us-east-1'
+      AWS_REGION: 'us-east-2'
       TF_VERSION: '1.4.0'
 
     steps:
