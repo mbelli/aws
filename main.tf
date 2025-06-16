@@ -7,22 +7,22 @@ resource "aws_s3_bucket" "thierry" {
   bucket = "thierry-19"
 }
 
-resource "aws_s3_bucket_ownership_controls" "example" {
-  bucket = aws_s3_bucket.example.id
+resource "aws_s3_bucket_ownership_controls" "thierry" {
+  bucket = aws_s3_bucket.thierry.id
   rule {
     object_ownership = "BucketOwnerPreferred"
   }
 }
 
-resource "aws_s3_bucket_acl" "example" {
-  depends_on = [aws_s3_bucket_ownership_controls.example]
+resource "aws_s3_bucket_acl" "thierry" {
+  depends_on = [aws_s3_bucket_ownership_controls.thierry]
 
-  bucket = aws_s3_bucket.example.id
+  bucket = aws_s3_bucket.thierry.id
   acl    = "private"
 }
 
-resource "aws_s3_bucket_public_access_block" "example" {
-  bucket = aws_s3_bucket.example.id
+resource "aws_s3_bucket_public_access_block" "thierry" {
+  bucket = aws_s3_bucket.thierry.id
 
   block_public_acls       = true
   block_public_policy     = true
@@ -30,8 +30,8 @@ resource "aws_s3_bucket_public_access_block" "example" {
   restrict_public_buckets = true
 }
 
-resource "aws_s3_bucket_versioning" "versioning_example" {
-  bucket = aws_s3_bucket.example.id
+resource "aws_s3_bucket_versioning" "versioning_thierry" {
+  bucket = aws_s3_bucket.thierry.id
   versioning_configuration {
     status = "Enabled"
   }
@@ -43,8 +43,8 @@ resource "aws_kms_key" "mykey" {
   deletion_window_in_days = 7
 }
 
-resource "aws_s3_bucket_server_side_encryption_configuration" "example" {
-  bucket = aws_s3_bucket.example.id
+resource "aws_s3_bucket_server_side_encryption_configuration" "thierry" {
+  bucket = aws_s3_bucket.thierry.id
 
   rule {
     apply_server_side_encryption_by_default {
