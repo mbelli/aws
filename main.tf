@@ -3,8 +3,8 @@ provider "aws" {
 }
 
 #tfsec:ignore:aws-s3-enable-bucket-logging
-resource "aws_s3_bucket" "example" {
-  bucket = "bucket-19"
+resource "aws_s3_bucket" "thierry" {
+  bucket = "thierry-19"
 }
 
 resource "aws_s3_bucket_ownership_controls" "example" {
