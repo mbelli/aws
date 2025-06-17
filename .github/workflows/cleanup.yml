@@ -1,10 +1,10 @@
 name: Terraform Cleanup
 
 on:
-  push:
-    branches:
-      - terraform
-  #workflow_dispatch:
+  #push:
+    #branches:
+    #  - terraform
+  workflow_dispatch:
   #schedule:
   #  - cron: '0 0 * * *' # Runs every day at midnight, adjust as needed
 
@@ -41,3 +41,6 @@ jobs:
 
       - name: 'Terraform Apply Destroy'
         run: terraform apply -auto-approve tfplan-destroy
+
+      - name: 'Terraform Destroy Target'
+        run: terraform destroy --target aws_instance.demo_vm_1
