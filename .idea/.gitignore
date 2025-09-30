@@ -1,5 +1,5 @@
 # Default ignored files
 /shelf/
 /workspace.xml
-# CodeStream ignored files
-/../../network-agent\.idea/codestream.xml
+# Environment-dependent path to Maven home directory
+/mavenHomeManager.xml
